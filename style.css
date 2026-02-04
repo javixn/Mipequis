@@ -1,0 +1,116 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background-image: url("mejoreste.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/*Estilos del robot y burbuja*/
+.robotio {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    left: 35%;
+    top: 28%;
+}
+
+.burbuja {
+  display: inline-block;
+  position: absolute;
+  left: 37%; 
+  top: 130px;
+
+  width: 200px;           /* 🔥 tamaño fijo */
+  min-height: 80px;       /* opcional, para que no se encoja demasiado verticalmente */
+
+  background: white;
+  color: #333;
+  font-size: 1.3rem;
+  font-family: Lilita One;
+  padding: 15px 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  animation: flotar 3s infinite ease-in-out;
+  word-wrap: break-word;
+  line-height: 1.4;
+}
+
+#btnNo {
+    position: absolute;
+    top: 560px;
+    left: 280px;
+    color: white;
+    background-color: red;
+    height: 60px;
+    width: 60px;
+    border-color: red;
+    border-radius: 10px;
+    font-family:Lilita One ;
+    margin-left: 20px;
+}
+
+#btnSi {
+    position: absolute;
+    top: 560px;
+    left: 200px;
+    color: white;
+    background-color: green;
+    height: 60px;
+    width: 60px;
+    border-color: green;
+    border-radius: 10px;
+    font-family:Lilita One ;
+}
+
+/* --- PICO ABAJO CENTRADO --- */
+.burbuja::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid white;
+}
+
+#accion{
+    position: absolute;
+    background-color:  #7D6044;
+    border-radius: 15px;
+    color: aliceblue;
+    font-family: Lilita One;
+    font-size: 30px;
+    width: 110px;
+    height: 45px;
+    top: 450px;
+    left: 220px;
+    animation: flotar 3s infinite ease-in-out;
+    transition: ease-in 0.5s;
+}
+
+#accion:hover{
+  transition: ease-out 0.5;
+  background-color: #2e1e12;
+}
+
+.boton{
+    position: absolute;
+    top: -25px;
+    left: 16px;
+}
+
+@keyframes flotar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    }
+    
+@media screen and (max-width: 416px) and (min-height: 900px) {
+    body {
+        background-size: cover;
+    }
+}
